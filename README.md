@@ -12,6 +12,12 @@ Lastly but not least this Web App HAS A EffcientNEt CNN deep learning model writ
 
 You can prove with this npy files (MEGA), Try yourself!: https://mega.nz/folder/UZoGBKpT#4Y6MRc-LE0EhvznrY4o1TQ
 
+IMPOTANT}
+
+EFNB7_weights.h5 file (MEGA): https://mega.nz/file/RB5VTQCY#-VowEBVk9rQnZh5eRVwz6Xn1N8msZqty-v4NGZd6YqY 
+
+
+
 DISCLOUSERE
 
 This Artificial Intelligence its only for development researh technology in data science and it's not a clinical tool.
