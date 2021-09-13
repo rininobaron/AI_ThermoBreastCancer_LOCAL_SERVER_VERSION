@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Detector de Carcinoma Mamario</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+	<style type="text/css">
+      html {
+        position: relative;
+        min-height: 100%;
+        height: unset;
+      }
+
+      body {
+        padding-bottom: 14px;
+        margin-bottom: 60px;
+        -webkit-font-smoothing: antialiased;
+        -moz-font-smoothing: grayscale;
+      }
+
+      .ui.container h1.ui.huge.header {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 500;
+        margin-top: 40px;
+        font-size: 36px;
+      }
+
+      footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background-color: #f5f5f5;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      footer p {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #777777;
+      }
+
+      p.lead {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 21px;
+        color: #333333;
+        line-height: 1.4;
+        font-weight: 300;
+      }
+    </style>
+</head>
+<body>
+  <header>
+    <a href="/">
+      <button class="ui button"><i class="home icon"></i>Inicio</button>
+    </a>
+    <h1 class="ui center aligned header">Análisis de Termogramas por Inteligencia Artificial</h1>
+  </header>
+  <div class="ui divider"></div>
+	<div class="ui divider"></div>
+  <h2 class="ui center aligned header">
+		<div class="content">
+			<form action="/upload" method="POST" enctype="multipart/form-data">
+				<input class="ui button" type="file" name="archivo">
+				<input class="ui button" type="submit">
+			</form>
+		</div>
+	</h2>
+	<footer>
+		<div class="ui inverted vertical footer segment form-page" >
+			<div class="ui container">
+				<p>Ricardo Niño de Rivera Barrón 2020. Todos los Derechos Reservados</p>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>

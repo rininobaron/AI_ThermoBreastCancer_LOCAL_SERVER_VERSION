@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Detector de Carcinoma Mamario</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+	<style type="text/css">
+      html {
+        position: relative;
+        min-height: 100%;
+        height: unset;
+      }
+
+      body {
+        padding-bottom: 14px;
+        margin-bottom: 60px;
+        -webkit-font-smoothing: antialiased;
+        -moz-font-smoothing: grayscale;
+      }
+
+      .ui.container h1.ui.huge.header {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 500;
+        margin-top: 40px;
+        font-size: 36px;
+      }
+
+      footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background-color: #f5f5f5;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      footer p {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #777777;
+      }
+
+      p.lead {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 21px;
+        color: #333333;
+        line-height: 1.4;
+        font-weight: 300;
+      }
+    </style>
+</head>
+<body>
+  <header>
+    <div class="ui segment">
+      <a href="/">
+        <button class="ui button"><i class="home icon"></i>Inicio</button>
+      </a>
+    </div>
+  </header>
+  <div class="ui divider"></div>
+  <div class="ui segment">
+    <div class="ui indicating large progress" id="barra_progreso">
+      <div class="bar"></div>
+      <div class="label" id="texto_progreso"></div>
+    </div>
+  </div>
+	<div class="ui segment">
+    <h4 class="ui center aligned header">
+      <div class="content">
+        Procesando Termograma<br>
+        Esto tomará varios minutos<br>
+        {{ task_id }}
+      </div>
+    </h4>
+  </div>
+  <div class="content">
+    <form id="form" action="/base" method="POST">
+      <input type="hidden" type="text" name="task_id", value="{{ task_id }}">
+    </form>
+  </div>
+  <div class="content">
+    <form id="form_error" action="/error" method="POST">
+      <input type="hidden" type="text" name="task_id", value="{{ task_id }}">
+    </form>
+  </div>
+	<footer>
+		<div class="ui inverted vertical footer segment form-page" >
+			<div class="ui container">
+				<p>Ricardo Niño de Rivera Barrón 2020. Todos los Derechos Reservados</p>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
+
+<script>
+    // Leyendo el id de la tarea en segundo plano
+    var taskID = '{{ task_id }}';
+
+    // Inicializando progreso
+    var progreso = 0
+    
+    //Ejecutamos la petición con ayuda JQuery y Ajax
+    function executeQuery() {
+      $.ajax({
+        url: '/check_status',
+        dataType: "json",
+        type: 'POST',
+        data: taskID,
+        success: function(resp)
+        {
+          console.log(resp);
+          if(resp.finish != false) {
+            // Se envía el formulario con el ID de la tarea finalizada
+            // para redireccionar a url con el resultado final 
+            progreso = resp.progress
+            // Ejecutando la barra de progreso de Semantic UI
+            $('#barra_progreso').progress({
+              percent: progreso
+            });
+            // Enviando texto a desplegar en barra de progreso
+            $('#texto_progreso').text(
+              progreso + '% ' + resp.message
+            );
+            console.log(resp.finish);
+            console.log(resp.progress);
+            document.getElementById("form").submit();
+          }
+          else {
+            progreso = resp.progress
+            // Ejecutando la barra de progreso de Semantic UI
+            $('#barra_progreso').progress({
+              percent: progreso
+            });
+            // Enviando texto a desplegar en barra de progreso
+            $('#texto_progreso').text(
+              progreso + '% ' + resp.message
+            );
+            console.log(resp.finish);
+            console.log(resp.progress);
+          }
+        },
+        error: function(resp)
+        {
+          document.getElementById("form_error").submit(); // Se redirecciona a página de error
+        }
+      });
+
+      updateCall();
+    }
+
+    function updateCall(){
+      setTimeout(function(){executeQuery()}, 5000);
+    }
+
+    $(document).ready(function() {
+      executeQuery();
+    });
+
+</script>

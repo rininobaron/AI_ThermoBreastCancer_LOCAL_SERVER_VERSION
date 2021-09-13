@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Detector de Carcinoma Mamario</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js"></script>
+	<style type="text/css">
+      html {
+        position: relative;
+        min-height: 100%;
+        height: unset;
+      }
+
+      body {
+        padding-bottom: 14px;
+        margin-bottom: 60px;
+        -webkit-font-smoothing: antialiased;
+        -moz-font-smoothing: grayscale;
+      }
+
+      .ui.container h1.ui.huge.header {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-weight: 500;
+        margin-top: 40px;
+        font-size: 36px;
+      }
+
+      footer {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 60px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background-color: #f5f5f5;
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      footer p {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        color: #777777;
+      }
+
+      p.lead {
+        font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 21px;
+        color: #333333;
+        line-height: 1.4;
+        font-weight: 300;
+      }
+    </style>
+</head>
+<body>
+	<header>
+		<a href="/">
+			<button class="ui button"><i class="home icon"></i>Inicio</button>
+		</a>
+		<h1 class="ui center aligned header">Análisis por Inteligencia Artificial de Termogramas</h1>
+	</header>
+	<div class="ui divider"></div>
+	<h2 class="ui center aligned header">
+		<img class="ui image" src="{{url_for('static', filename='noun_thermo scan_3379623.png')}}">
+		<div class="content">
+			Termograma
+		</div>
+		<div class="ui segment">
+			<img class="ui centered medium image"  title="Termograma" src="{{ image }}" alt="Termograma Original">
+		</div>
+	</h2>
+	<div class="ui divider"></div>
+	<div class="ui divider"></div>
+	<h2 class="ui center aligned header">
+		<img class="ui image" src="{{url_for('static', filename='neural_network.png')}}">
+		<div class="content">
+			Red Neuronal con base en Caracterización Bilateral
+		</div>
+	</h2>
+	<div class="ui horizontal segments">
+		<div class="ui segment">
+			<h3 class="ui center aligned header">
+				<img class="ui image" src="{{url_for('static', filename='masto_icon.png')}}">
+				<div class="content">
+					Máscara Otsu 
+				</div>
+			</h3>
+			<p>
+				<img class="ui centered medium image"  title="Binarización por Otsu" src="{{ image_otsu }}" alt="Termograma Original">
+			</p>
+		</div>
+		<div class="ui segment">
+			<h3 class="ui center aligned header">
+				<img class="ui image" src="{{url_for('static', filename='masto_icon.png')}}">
+				<div class="content">
+					Derecha 
+				</div>
+			</h3>
+			<p>
+				<img class="ui centered medium image"  title="Lado derecho" src="{{ image_derecha }}" alt="Termograma Original">
+			</p>
+		</div>
+		<div class="ui segment">
+			<h3 class="ui center aligned header">
+				<img class="ui image" src="{{url_for('static', filename='masto_icon.png')}}">
+				<div class="content">
+					Izquierda 
+				</div>
+			</h3>
+			<p>
+				<img class="ui centered medium image"  title="Lado izquierdo" src="{{ image_izquierda }}" alt="Termograma Original">
+			</p>
+		</div>
+	</div>
+	<h3 class="ui center aligned header">
+		<img class="ui image" src="{{url_for('static', filename='medical-results.png')}}">
+		<div class="content">
+			Probabilidad de Cáncer: {{resultado_1}}%
+		</div>
+	</h3>
+	<div class="ui divider"></div>
+	<div class="ui divider"></div>
+	<div class="ui divider"></div>
+	<h2 class="ui center aligned header">
+		<img class="ui image" src="{{url_for('static', filename='convolutional.png')}}">
+		<div class="content">
+			Red Neuronal Convolucional EfficientNet 
+		</div>
+	</h2>
+	<div class="ui horizontal segments">
+		<div class="ui segment">
+			<h3 class="ui center aligned header">
+				<img class="ui image" src="{{url_for('static', filename='masto_icon.png')}}">
+				<div class="content">
+					Seudocolor 
+				</div>
+			</h3>
+			<p>
+				<img class="ui centered medium image"  title="Termograma seudocolor" src="{{ image }}" alt="Termograma Original">
+			</p>
+		</div>
+		<div class="ui segment">
+			<h3 class="ui center aligned header">
+				<img class="ui image" src="{{url_for('static', filename='masto_icon.png')}}">
+				<div class="content">
+					Original 
+				</div>
+			</h3>
+			<p>
+				<img class="ui centered medium image"  title="Termograma en escala de grises" src="{{ image_original }}" alt="Termograma Original">
+			</p>
+		</div>
+	</div>
+	<h3 class="ui center aligned header">
+		<img class="ui image" src="{{url_for('static', filename='medical-results.png')}}">
+		<div class="content">
+			Probabilidad de Cáncer: {{resultado_2}}%
+		</div>
+	</h3>
+	<div class="ui divider"></div>
+	<div class="ui divider"></div>
+	<h3 class="ui center aligned header">
+		<img class="ui image" src="{{url_for('static', filename='attention.png')}}">
+		<div class="content">
+			Experimentalmente la Red Neuronal EfficientNet demostró mejor rendimiento. 
+		</div>
+	</h3>
+	<footer>
+		<div class="ui inverted vertical footer segment form-page" >
+			<div class="ui container">
+				<p>Ricardo Niño de Rivera Barrón 2020. Todos los Derechos Reservados</p>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
