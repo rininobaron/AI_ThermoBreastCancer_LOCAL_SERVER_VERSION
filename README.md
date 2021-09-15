@@ -20,7 +20,7 @@ EFNB7_weights.h5 file (MEGA): https://mega.nz/file/RB5VTQCY#-VowEBVk9rQnZh5eRVwz
 
 **DISCLOUSERE**
 
-This Artificial Intelligence app is only for researching and developing new open tools with Artificial Intelligence in order to improve People Well Being and it's not a clinical tool yet.
+This Artificial Intelligence app is only for researching and developing new open tools with Artificial Intelligence in order to improve people's well-being and it's not a clinical tool yet.
 
 This web app doesn't storage any data.
 
