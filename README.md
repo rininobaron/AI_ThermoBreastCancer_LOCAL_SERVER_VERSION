@@ -18,12 +18,12 @@ EFNB7_weights.h5 file (MEGA): https://mega.nz/file/RB5VTQCY#-VowEBVk9rQnZh5eRVwz
 
 
 
-DISCLOUSERE
+**DISCLOUSERE**
 
-This Artificial Intelligence its only for development researh technology in data science and it's not a clinical tool.
+This Artificial Intelligence app is only for researching and developing new open tools with Artificial Intelligence in order to improve People Well Being and it's not a clinical tool yet.
 
 This web app doesn't storage any data.
 
-This prototype has GNU General Public License v3.0
+This prototype has **GNU General Public License v3.0**
 
 
