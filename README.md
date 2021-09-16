@@ -1,6 +1,6 @@
 # AI_ThermoBreastCancer_LOCAL_SERVER_VERSION
 
-In This repository you can found files necesary for deploying a prototype written in python, HTML, CSS, JavaScript and Linux Shell Scripting Language to deploy a Web App IN YOUT OWN REPOSITORY!.
+In This repository you can find files necesary for deploying a prototype written in python, HTML, CSS, JavaScript and Linux Shell Scripting Language to deploy a Web App IN YOUT OWN REPOSITORY!.
 
 This prototype hopes you send any .npy file because is not performanced to specific raw thermocam file.
 
