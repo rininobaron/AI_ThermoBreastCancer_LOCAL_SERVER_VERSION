@@ -16,7 +16,24 @@ You can prove with this npy files (MEGA), Try yourself!: https://mega.nz/folder/
 
 EFNB7_weights.h5 file (MEGA): https://mega.nz/file/RB5VTQCY#-VowEBVk9rQnZh5eRVwz6Xn1N8msZqty-v4NGZd6YqY 
 
+![image](https://user-images.githubusercontent.com/17024106/133529662-e25a158f-408a-4529-89cb-cce9badca373.png)
 
+![image](https://user-images.githubusercontent.com/17024106/133529674-2172572f-b928-4226-af00-4221b6e604d1.png)
+
+![image](https://user-images.githubusercontent.com/17024106/133529690-1f64639a-3331-44ed-b977-6b1321456863.png)
+
+![image](https://user-images.githubusercontent.com/17024106/133529706-89c9a066-273b-4474-b876-c662e55c4e77.png)
+
+![image](https://user-images.githubusercontent.com/17024106/133529721-64258c49-a798-45db-aedd-0d6b798bb057.png)
+
+![image](https://user-images.githubusercontent.com/17024106/133529734-a90fedd1-1edd-4f7c-9e34-aba9354e2e7b.png)
+
+![image](https://user-images.githubusercontent.com/17024106/133529740-829c361c-f296-400e-9908-40e6fd797f91.png)
+
+
+**DOCUMENTS OF EXPERIMENTS**
+AI_ThermoBreastCancer_FROM_SCRATCH:
+https://github.com/rininobaron/AI_ThermoBreastCancer_FROM_SCRATCH
 
 **DISCLOUSERE**
 
