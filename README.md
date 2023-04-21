@@ -32,8 +32,8 @@ EFNB7_weights.h5 file (MEGA): https://mega.nz/file/RB5VTQCY#-VowEBVk9rQnZh5eRVwz
 
 
 **DOCUMENTS OF EXPERIMENTS**
-AI_ThermoBreastCancer_FROM_SCRATCH:
-https://github.com/rininobaron/AI_ThermoBreastCancer_FROM_SCRATCH
+Trabajo Terminal UPIITA IPN:
+https://github.com/rininobaron/Trabajo_Terminal_UPIITA_IPN
 
 **DISCLOUSERE**
 
